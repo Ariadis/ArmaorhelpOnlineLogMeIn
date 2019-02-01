@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <script type="text/javascript" src="https://secure.logmeinrescue.com/InstantChat/InstantChat.aspx"></script>
+
+    <script type="text/javascript">
+
+        function loadInstantChat(){
+
+            var ICLoader = new RescueInstantChatLoader();
+
+            ICLoader.ICContainer = "ICContainer";
+
+            ICLoader.HostedCSS = "https://secure.logmeinrescue.com/InstantChat/Standard/InstantChat.css";
+
+            ICLoader.HostedLanguagesForChatOnlyMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForChatOnlyMode.js";
+
+            ICLoader.HostedLanguagesForAppletMode = "https://secure.logmeinrescue.com/InstantChat/LanguagesForAppletMode.js";
+
+            ICLoader.EntryID = "248087099";
+
+            ICLoader.Name = document.getElementById("Name").value; /* optional */
+
+            ICLoader.Comment1 = document.getElementById("Comment1").value; /* optional */
+
+            ICLoader.Tracking0 = ""; /* optional */
+
+            ICLoader.Language = "fr"; /* optional */
+
+            ICLoader.HostedErrorHandler = function(ErrorName){} /* optional */
+
+            ICLoader.Start();}
+
+        function handleRebootOrRefresh(){
+
+            if ((window.location + "").indexOf("rescuewebsessionid") != -1){document.getElementById("ICContainer").style.display=""; loadInstantChat();} /* optional */
+
+            if (window.location.hash.length == webSessionIdLength + 1){document.getElementById("ICContainer").style.display=""; loadInstantChat();} /* optional */
+
+        }
+
+    </script>
+
+</head>
+
+<body onload="handleRebootOrRefresh();">
+
+    <table>
+
+        <tr><td>Entrez votre nom: </td><td><input id="Name" type="text" maxlength="64" /></td></tr>
+
+        <tr><td>Société: </td><td><input id="Comment1" type="text" maxlength="512" /></td></tr>
+
+    </table>
+
+    <input type="button" value="Support technique" onclick="document.getElementById('ICContainer').style.display=''; loadInstantChat();" />
+
+    <div id="ICContainer" style="position: absolute; left: 0px; top: 0px; width: 400px; height: 500px; display: none"></div>
+
+</body>
+
+</html>
